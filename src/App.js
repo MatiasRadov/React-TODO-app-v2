@@ -15,19 +15,31 @@ function App() {
     setListaTareas(listaFiltrada);
   }
   return (
-    <div className="container justify-content-center">
+    <div className="container">
       <div className="row justify-content-center">
         <div className="col-6 text-center">
           <h1>todos</h1>
           <TareaForm 
             nuevaTarea={nuevaTarea}
           />
+        <ul className="list-group pb-3">
           {
-            listaTareas.map((e,index) => <Tarea 
-                                  tarea={e}
-                                  borrar={borrar}
-                                  id={index}/>)
+            listaTareas.map((e,index) => 
+ 
+                                  <Tarea 
+                                    tarea={e}
+                                    borrar={borrar}
+                                    id={index}/>)
           }
+            <li className="list-group-item counter" id="task-counter">
+              {listaTareas.length}{" "}
+              {listaTareas.length > 1
+                  ? "items left"
+                  : listaTareas.length === 1
+                  ? "item left"
+                  : "tasks, add a task!"}
+            </li>
+          </ul>
         </div>
       </div>
     </div>

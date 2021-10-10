@@ -18,20 +18,27 @@ function TareaForm(props) {
             setValidacion(false)
         }
     }
-
     return (
-        <div>
-            <form className="form" onSubmit={submit}>
-                <span>Añadir tarea</span>
-                <input value={inputText} onChange={manejarFormulario}/>
-                <button>Añadir</button>
+        <div className="container px-0">
+            <div className="row">
+            <form className="form row mb-3 pe-0" onSubmit={submit}>
+                <div className="col">
+                <input
+                    className="form-control" 
+                    value={inputText} 
+                    onChange={manejarFormulario}
+                    placeholder="What's new to be done?"/>
+                </div>
+                <div className="col col-lg-3 px-0">
+                    <button type="submit" className="btn btn-dark">Add task</button>
+                </div>
             </form>
             {
                 !validacion &&
-                <div className='validacion'>Añadir una tarea, por favor</div>
+                <div className='validacion'>Add a new task, please</div>
             }
+            </div>
         </div>
     )
 }
-
 export default TareaForm
