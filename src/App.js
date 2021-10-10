@@ -14,8 +14,18 @@ function App() {
     const listaFiltrada = listaTareas.filter((e,index)=> index !== id);
     setListaTareas(listaFiltrada);
   }
+  const actualizarTarea = (id,tarea) => {
+    const listaActualizada = listaTareas.map((e,index)=>{
+      if(index === id){
+        e=tarea;
+      }
+      return e;
+    })
+    setListaTareas(listaActualizada);
+  }
+
   return (
-    <div className="container">
+    <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-6 text-center">
           <h1>todos</h1>
@@ -29,7 +39,8 @@ function App() {
                                   <Tarea 
                                     tarea={e}
                                     borrar={borrar}
-                                    id={index}/>)
+                                    id={index}
+                                    editar={actualizarTarea}/>)
           }
             <li className="list-group-item counter" id="task-counter">
               {listaTareas.length}{" "}
