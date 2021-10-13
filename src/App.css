@@ -45,3 +45,10 @@ h1{
 .col-lg-2{
     max-width: 120px;
 }
+i:hover {
+    color: orangered;
+}
+.form .btn:hover {
+    background: #7209b7;
+    border-color: #7209b7;
+}
