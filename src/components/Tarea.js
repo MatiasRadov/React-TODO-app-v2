@@ -18,6 +18,7 @@ const Tarea = (props) => {
                         className="far fa-trash-alt">
                     </i>
                 </span>
+                <div>hello</div>
                 </div>
             </li>
             
